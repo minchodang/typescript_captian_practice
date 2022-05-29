@@ -4,7 +4,7 @@ interface User {
 }
 
 //변수에 인터페이스 활용.
-var seho: User = {
+let seho: User = {
   age: 33,
   name: '세호',
 };
