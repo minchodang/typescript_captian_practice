@@ -24,8 +24,8 @@ interface Person {
 function askSomeone(someone: Developer | Person) {
   // 유니온 타입 설정이라도 공통 속성 제외하고 나머지 속성은 사용 불가. -> 타입 가드 추가 필요.
   someone.name;
-  someone.age;
-  someone.skill;
+  // someone.age;
+  // someone.skill;
 }
 
 askSomeone({ name: '디벨로퍼', skill: '웹 개발' });
