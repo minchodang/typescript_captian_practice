@@ -38,7 +38,7 @@ interface DetailedDropdown<K> extends Dropdown2<K>{
 // 그에 따라 오류를 발생하게 된다. 이런 식으로 추론 방식이
 // 어떤 코드를 작성하고 저장할 때 마다 타입스크립트 랭귀지 서버에 
 // 의해서 타입이 추론이 되고 그 값들의 타입이 맞다 그르다를 알려주는 것이 타입 추론이다. 
-let detailedItem: DetailedDropdown<number>={
+let detailedItem: DetailedDropdown<string>={
   title:'abc',
   description:'ab',
   value:'aaa',
