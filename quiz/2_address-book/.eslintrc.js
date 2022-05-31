@@ -20,7 +20,7 @@ module.exports = {
         tabWidth: 2,
         printWidth: 80,
         bracketSpacing: true,
-        arrowParens: 'avoid',
+        // arrowParens: 'avoid',
       },
     ],
     // '@typescript-eslint/no-explicit-any': 'off',
