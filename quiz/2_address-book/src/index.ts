@@ -55,7 +55,7 @@ function fetchContacts(): Promise<Contact[]> {
       },
     },
   ];
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(contacts), 2000);
   });
 }
@@ -71,18 +71,18 @@ class AddressBook {
   }
 
   fetchData(): void {
-    fetchContacts().then(response => {
+    fetchContacts().then((response) => {
       this.contacts = response;
     });
   }
 
   /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
   findContactByName(name: string): Contact[] {
-    return this.contacts.filter(contact => contact.name === name);
+    return this.contacts.filter((contact) => contact.name === name);
   }
 
   findContactByAddress(address: string): Contact[] {
-    return this.contacts.filter(contact => contact.address === address);
+    return this.contacts.filter((contact) => contact.address === address);
   }
 
   // 만약 phoneType에 오타가 난 경우 에러 처리가 안 될 수 있다. 이럴 경우,
@@ -90,7 +90,7 @@ class AddressBook {
 
   findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
     return this.contacts.filter(
-      contact => contact.phones[phoneType].num === phoneNumber
+      (contact) => contact.phones[phoneType].num === phoneNumber
     );
   }
 
@@ -99,13 +99,19 @@ class AddressBook {
   }
 
   displayListByName(): string[] {
-    return this.contacts.map(contact => contact.name);
+    return this.contacts.map((contact) => contact.name);
   }
 
   displayListByAddress(): string[] {
-    return this.contacts.map(contact => contact.address);
+    return this.contacts.map((contact) => contact.address);
   }
-  /* ------------------------------------------------ */
 }
 
+// 이렇게 as로 단언을 해서 범위를 좁혀주는 것이 type assertion임.
+let div = document.querySelector('.container') as HTMLDivElement;
+// 따라서 단언을 하면, 이렇게 조건문으로 달지 않아도 된다.
+// if (div) {
+//   div.innerText;
+// }
+div.innerText;
 new AddressBook();
