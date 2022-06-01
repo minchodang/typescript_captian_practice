@@ -13,7 +13,7 @@ let person: Person;
 // 서로 일치하는 속성이 하나 뿐이기 때문이다.
 // 기본적으로 타입 호환 = 구조적으로 오른쪽의 타입이 왼쪽의 타입에 비해
 // 더 많은 속성을 가지고 있으며 더 컸을 때 왼쪽과 호환이 된다.
-developer = person;
+// developer = person;
 
 // 가능한 예시.
 person = developer;
@@ -31,7 +31,7 @@ let developer2: Developer2;
 let person2: Person2;
 // 이렇게 타입 별칭이나 클래스와 인터페이스 등의 명칭으로 타입 호환성을 확인하지는
 // 않는다. 즉, 어떤 것이든 간에 내부적인 속성과 타입 정의들에 대해서 비교.
-developer2 = new Person2();
+// developer2 = new Person2();
 
 // 함수 상에서의 타입 호환성.
 // 현재 예시에서 sum이라는 함수가 add라는 함수보다 구조적으로 더 크다.
@@ -44,7 +44,7 @@ let sum = function (a: number, b: number) {
 };
 
 // 위처럼 당연히 안 됨. 구조적으로 반대는 역시나 가능.
-add = sum;
+// add = sum;
 sum = add;
 
 // 제네릭.
@@ -68,5 +68,5 @@ let notempty2: NotEmpty<number>;
 // 이렇게 되면, 사실상 구조적인 차이를 만들게 된다.
 // 그래서 타입 호환 불가함.
 
-notempty1 = notempty2;
-notempty2 = notempty1;
+// notempty1 = notempty2;
+// notempty2 = notempty1;
