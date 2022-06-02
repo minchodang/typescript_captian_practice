@@ -8,7 +8,7 @@ interface Product {
 
 // 1. 상품 목록을 받아오기 위한 api 함수.
 function fetchProducts(): Promise<Product[]> {
-  //...
+  return;
 }
 
 // 이렇게 인터페이스를 따로 설정할 수 도 있지만, 중복 코드가 발생함.
