@@ -9,7 +9,7 @@ npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @type
 ```
 
 4. 프로젝트 폴더 바로 아래에 ESLint 설정 파일 추가
-   
+
 ```js
 // .eslintrc.js
 module.exports = {
