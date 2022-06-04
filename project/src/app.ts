@@ -6,6 +6,8 @@ function getUnixTimestamp(date: Date) {
   return new Date(date).getTime();
 }
 
+const a = 10;
+
 // DOM
 const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
 const deathsTotal = $('.deaths') as HTMLParagraphElement;
@@ -34,7 +36,7 @@ function createSpinnerElement(id: string) {
 
 // state
 let isDeathLoading = false;
-let isRecoveredLoading = false;
+const isRecoveredLoading = false;
 
 // api
 function fetchCovidSummary() {
@@ -108,7 +110,7 @@ function setDeathsList(data) {
   const sorted = data.sort(
     (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
   );
-  sorted.forEach((value) => {
+  sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
@@ -134,7 +136,7 @@ function setRecoveredList(data) {
   const sorted = data.sort(
     (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
   );
-  sorted.forEach((value) => {
+  sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
@@ -176,7 +178,7 @@ async function setupData() {
 }
 
 function renderChart(data, labels) {
-  var ctx = $('#lineChart').getContext('2d');
+  const ctx = $('#lineChart').getContext('2d');
   Chart.defaults.color = '#f5eaea';
   Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
@@ -197,10 +199,10 @@ function renderChart(data, labels) {
 }
 
 function setChartData(data) {
-  const chartData = data.slice(-14).map((value) => value.Cases);
+  const chartData = data.slice(-14).map(value => value.Cases);
   const chartLabel = data
     .slice(-14)
-    .map((value) => new Date(value.Date).toLocaleDateString().slice(5, -1));
+    .map(value => new Date(value.Date).toLocaleDateString().slice(5, -1));
   renderChart(chartData, chartLabel);
 }
 
@@ -229,7 +231,7 @@ function setCountryRanksByConfirmedCases(data) {
   const sorted = data.Countries.sort(
     (a, b) => b.TotalConfirmed - a.TotalConfirmed
   );
-  sorted.forEach((value) => {
+  sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item flex align-center');
     li.setAttribute('id', value.Slug);
